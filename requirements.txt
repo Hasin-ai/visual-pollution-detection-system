@@ -1,0 +1,31 @@
+# Core FastAPI dependencies
+fastapi>=0.104.1
+uvicorn[standard]>=0.24.0
+python-multipart>=0.0.6
+pydantic>=2.5.0
+python-dotenv>=1.0.0
+
+# Machine Learning
+torch>=2.1.0
+torchvision>=0.16.0
+ultralytics>=8.0.206
+numpy>=1.24.3
+opencv-python>=4.8.1.78
+
+# Image Processing
+Pillow>=10.1.0
+
+# HTTP Client for Gemini API
+httpx>=0.25.2
+aiofiles>=23.2.1
+
+# Testing
+pytest>=7.4.3
+pytest-asyncio>=0.21.1
+
+# Development
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+
+# Optional: For production deployment
+gunicorn>=21.2.0
