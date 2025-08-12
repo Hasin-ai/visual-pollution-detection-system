@@ -164,6 +164,27 @@ async def get_model_info(
             status_code=500,
             detail=f"Failed to get model info: {str(e)}"
         )
+    
+
+
+
+@router.get("/classes")
+async def get_classes(model_service: ModelService = Depends(get_model_service)):
+    """
+    Get list of detection classes and their descriptions
+    """
+    try:
+        return {
+            "classes": model_service.CLASS_NAMES,
+            "descriptions": model_service.CLASS_DESCRIPTIONS,
+            "total_classes": len(model_service.CLASS_NAMES)
+        }
+    except Exception as e:
+        logger.error(f"Error getting classes: {e}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to get classes: {str(e)}"
+        )
 
 @router.get("/health")
 async def health_check(request: Request):
