@@ -154,11 +154,11 @@ class ModelService:
                                 "description": self.CLASS_DESCRIPTIONS.get(class_name, "Unknown")
                             })
             
-            # Calculate overall metrics
+          
             num_detections = len(detections)
             avg_confidence = total_confidence / num_detections if num_detections > 0 else 0.0
             
-            # Determine overall pollution level
+           
             pollution_level = self._calculate_pollution_level(detections, class_counts)
             
             return {
@@ -189,7 +189,7 @@ class ModelService:
         if not detections:
             return "Clean"
         
-        # Weight different types of pollution
+       
         pollution_weights = {
             "Street_Litter": 3,
             "Construction_Material": 2,
@@ -204,7 +204,7 @@ class ModelService:
             weight = pollution_weights.get(class_name, 1)
             weighted_score += count * weight
         
-        # Determine level based on weighted score
+       
         if weighted_score == 0:
             return "Clean"
         elif weighted_score <= 2:
