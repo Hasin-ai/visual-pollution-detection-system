@@ -133,7 +133,7 @@ By leveraging computer vision and machine learning, we can work towards building
     async def get_visual_pollution_overview(self) -> str:
         """Get a comprehensive overview of visual pollution"""
         prompt = """
-        Please provide a comprehensive overview of visual pollution that covers:
+        Please Please provide a comprehensive overview of visual pollution that covers:
         
         1. Definition and explanation of what visual pollution is
         2. Common types and examples of visual pollution in urban environments
